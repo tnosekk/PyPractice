@@ -4,14 +4,13 @@
 
 import mysql.connector as mysql
 
-
-MY_HOST = 'pluto.local'
-MY_USER = 'appuser'
-MY_PASS = 'Spartacus'
+MY_HOST = "localhost"
+# MY_USER = 'appuser'
+MY_PASS = "***"
 
 
 def main():
-    db = mysql.connect(host=MY_HOST, user=MY_USER, password=MY_PASS, database='scratch')
+    db = mysql.connect(host=MY_HOST, password=MY_PASS, database="scratch")
     cur = db.cursor(prepared=True)
 
     cur.execute("DROP TABLE IF EXISTS temp")
@@ -25,7 +24,7 @@ def main():
         print(row)
 
     query = "SELECT * FROM temp WHERE a = ?"
-    cur.execute(query, ('four',))
+    cur.execute(query, ("four",))
 
     for row in cur:
         print(f"result is {row}")
