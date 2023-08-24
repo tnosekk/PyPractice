@@ -1,0 +1,3 @@
+[submodule "PyPractice"]
+	path = PyPractice
+	url = https://github.com/tnosekk/PyPractice.git
